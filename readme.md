@@ -13,3 +13,4 @@
 - `app/helpers/location_helper` is used for converting address into zipcode, using Geocoder.
 - `app/models/forecast` is the weather data to be displayed after lookup.
   - There are no migrations to run, this is simply a wrapper holding only the relevant forecast details.
+- 'test/helpers` and `test/models` are the relevant unit tests
