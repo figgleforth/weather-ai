@@ -1,0 +1,157 @@
+:root {
+  --corner-radius: 1em;
+
+  --form-width: 600px;
+  --form-padding: 1em;
+  --form-input-padding: 0.8em 1em;
+  --form-input-gap: 1em;
+  --form-font-size: 1em;
+
+  --forecast-width: 400px;
+  --forecast-section-gap: 2em;
+
+  --page-background-color: #eee;
+  --search-button-background-color: DodgerBlue;
+  --search-button-background-color-hover: RoyalBlue;
+  --search-button-foreground-color: #fff;
+  --alert-background-color: LightSalmon;
+  --alert-foreground-color: #000;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--page-background-color);
+  font-size: 18px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--forecast-section-gap);
+}
+
+main form input {
+  padding: var(--form-input-padding);
+  border: none;
+  outline: none;
+}
+
+.search-form {
+  width: var(--form-width);
+  padding: var(--form-padding);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--form-input-gap);
+}
+
+.search-input {
+  font-size: var(--form-font-size);
+  flex: 0.7; /* takes up 70% of the form */
+  border-radius: var(--corner-radius);
+}
+
+.search-button {
+  font-size: var(--form-font-size);
+  flex: 0.3; /* takes up 30% of the form */
+  background-color: var(--search-button-background-color);
+  color: var(--search-button-foreground-color);
+  border: none;
+  border-radius: var(--corner-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: var(--search-button-background-color-hover);
+}
+
+.forecast-container {
+  width: var(--forecast-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--forecast-section-gap);
+}
+
+.high-low {
+  display: flex;
+  flex-direction: row;
+}
+
+.current-temperature {
+  font-size: 80px;
+}
+
+.high, .low {
+  display: flex;
+}
+
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.location {
+  font-weight: bold;
+  text-align: center;
+}
+
+.temperature {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.feels-like {
+  font-size: 1em;
+}
+
+.high-low {
+  display: flex;
+  gap: 10px;
+}
+
+.current-weather-details {
+  width: 100%;
+}
+
+.current-weather-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+}
+
+.current-weather-details td {
+  padding: 10px;
+}
+
+.current-weather-details td:last-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.alert {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-top: 4em;
+  text-align: center;
+  background-color: var(--alert-background-color);
+  color: var(--alert-foreground-color);
+  border-radius: var(--corner-radius);
+  padding: var(--form-input-padding);
+}

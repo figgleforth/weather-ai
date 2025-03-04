@@ -1,0 +1,38 @@
+<% if @forecast %>
+  <div class="forecast-container">
+    <div class="current-weather">
+      <div class="location"><%= @forecast.location_name %></div>
+      <div class="temperature"><%= @forecast.temperature.round %>&deg;</div>
+      <div class="feels-like">Feels Like: <b><%= @forecast.feels_like.round %>&deg;</b></div>
+      <div class="high-low">
+        <div class="high">H: <b><%= @forecast.maximum.round %>&deg;</b></div>
+        <div class="low">L: <b><%= @forecast.minimum.round %>&deg;</b></div>
+      </div>
+    </div>
+
+    <div class="current-weather-details">
+      <table>
+        <tr>
+          <td>Humidity</td>
+          <td><%= @forecast.humidity %>%</td>
+        </tr>
+        <tr>
+          <td>Cloud Coverage</td>
+          <td><%= @forecast.cloud_coverage %>%</td>
+        </tr>
+        <tr>
+          <td>Sunrise</td>
+          <td><%= @forecast.formatted_sunrise %></td>
+        </tr>
+        <tr>
+          <td>Sunset</td>
+          <td><%= @forecast.formatted_sunset %></td>
+        </tr>
+      </table>
+
+      <% if @forecast.cached %>
+        <div class="alert">♻ Forecast cached</div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

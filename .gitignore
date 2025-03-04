@@ -1,3 +1,9 @@
+# taken from https://github.com/github/gitignore/blob/main/Rails.gitignore
+
+.idea/*
+.dockerignore
+.DS_Store
+
 *.rbc
 capybara-*.html
 .rspec

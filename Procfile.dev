@@ -1,0 +1,4 @@
+# these *_PORT constants are defined in .env
+# setting --dir ensures a dump file isn't written to the root directory. I find this cleaner than adding the dump file to gitignore
+redis: redis-server --dir ./tmp --port $REDIS_PORT
+web: bin/rails server --port $RAILS_PORT
