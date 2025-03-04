@@ -1,9 +1,9 @@
 class ForecastController < ApplicationController
-
+	# this endpoint shows the weather search form and the weather details
 	def index
 		zipcode   = zipcode_param[:zipcode]
 		@forecast = if zipcode
-			ForecastHelper.forecast_for_zipcode zipcode
+			ForecastHelper.forecast_for_zipcode zipcode.to_s
 		else
 			nil
 		end
@@ -14,6 +14,7 @@ class ForecastController < ApplicationController
 		redirect_to root_path
 	end
 
+	# this endpoint is posted to by the form found in the layout application.html.erb
 	def get_forecast
 		zipcode = LocationHelper.zipcode_for_address(address_param)
 
@@ -36,6 +37,6 @@ class ForecastController < ApplicationController
 	end
 
 	def zipcode_param
-		params.permit(:zipcode)
+		params.permit(:zipcode) # this is not required because I chose to share the index page between the address search and the forecast
 	end
 end

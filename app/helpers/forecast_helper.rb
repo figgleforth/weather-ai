@@ -42,7 +42,7 @@ module ForecastHelper
 		nil
 	end
 
-	# @return [OpenWeather::Client, nil]
+	# @return [OpenWeather::Client, nil] The OpenWeather client used to fetch forecasts
 	def self.weather_client
 		OpenWeather::Client.new(api_key: API_KEY, units: "imperial")
 	rescue StandardError => e # based on OpenWeather source code, these errors are probably Faraday errors, but just in case I'm wrong I'll catch all
