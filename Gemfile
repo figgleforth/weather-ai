@@ -69,7 +69,7 @@ end
 
 # gems for this exercise
 gem "redis", "5.3.0"
-gem "geocoder", "1.8"
+gem "geocoder", "1.8.5"
 gem "csv", "~> 3.3"
 gem "open-weather", "~> 0.11.0"
 gem "open-weather-ruby-client", "~> 0.6.0"
